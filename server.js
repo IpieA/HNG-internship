@@ -1,7 +1,8 @@
 const express = require('express');
 const app = express();
+const dotenv = require('dotenv');
 
-PORT =  1234;
+dotenv.config({ path: './config/.env' });
 
 app.get('/api', (req, res) => {
     
@@ -21,7 +22,7 @@ app.get('/api', (req, res) => {
     res.status(200).json(response);
 });  
 
-app.listen(PORT, () => {
-    console.log(`Server is running and listening on PORT ${PORT}`,
-    `http://localhost:${PORT}`);
+app.listen(process.env.PORT, () => {
+    console.log(`Server is running and listening on PORT ${process.env.PORT}`,
+    `http://localhost:${process.env.PORT}`);
 });
