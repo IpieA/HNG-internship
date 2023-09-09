@@ -12,10 +12,10 @@ app.get('/api', (req, res) => {
     const response = {
         slack_name,
         current_day: new Date().toLocaleDateString('en-UK', { weekday: 'long' }),
-        current_utc_time: new Date(Date.now() + (2 * 60 * 1000)).toISOString(),
+        utc_time: new Date(Date.now() + (2 * 60 * 1000)).toISOString(),
         track,
-        github_file_url: 'https://github.com/demo_file_url',
-        github_repo_url: 'https://github.com/demo_repo_url',
+        github_file_url: 'https://github.com/IpieA/HNG-internship/blob/master/server.js',
+        github_repo_url: 'https://github.com/IpieA/HNG-internship',
         status_code: 200,
     };
 
